@@ -653,7 +653,7 @@ proc set_drv_def_dts {drv_handle} {
 		if {![llength $hw_name]} {
 			set hw_name [::hsi::get_hw_files -filter "TYPE == bit"]
 		}
-		hsi::utils::add_new_dts_param "${child_node}" "firmware-name" "$hw_name.bin" string
+		hsi::utils::add_new_dts_param "${child_node}" "firmware-name" "$hw_name" string
 		set overlay_custom_dts [get_property CONFIG.overlay_custom_dts [get_os]]
 		if {[llength $overlay_custom_dts]} {
 			update_overlay_custom_dts_include $default_dts
