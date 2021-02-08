@@ -2405,7 +2405,7 @@ proc gen_compatible_property {drv_handle} {
 	set ver [lindex $vlnv 3]
 	set comp_prop "xlnx,${name}-${ver}"
 	regsub -all {_} $comp_prop {-} comp_prop
-	set_drv_prop_if_empty $drv_handle compatible $comp_prop stringlist
+	set_drv_prop_if_empty $drv_handle compatible [list $comp_prop "linux,uio-pdrv-genirq"] stringlist
 }
 
 proc is_property_set {value} {
