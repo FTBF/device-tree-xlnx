@@ -433,6 +433,7 @@ proc generate {lib_handle} {
         gen_peripheral_nodes $drv_handle "create_node_only"
         gen_reg_property $drv_handle
         gen_compatible_property $drv_handle
+        gen_label $drv_handle
         gen_drv_prop_from_ip $drv_handle
         gen_interrupt_property $drv_handle
         gen_clk_property $drv_handle

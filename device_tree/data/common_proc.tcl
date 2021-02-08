@@ -2391,6 +2391,19 @@ proc check_base {reg base size} {
 	}
 }
 
+proc gen_label {drv_handle} {
+	proc_called_by
+
+	if {[is_ps_ip $drv_handle]} {
+		return 0
+	}
+
+	set slave [get_cells -hier ${drv_handle}]
+	set name [get_property NAME $slave]
+	regsub -all {_} $name {-} name
+	set_drv_prop_if_empty $drv_handle label $name stringlist
+}
+
 proc gen_compatible_property {drv_handle} {
 	proc_called_by
 
