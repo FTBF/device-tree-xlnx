@@ -38,8 +38,8 @@ proc generate {drv_handle} {
 		return
 	}
         set compatible [get_comp_str $drv_handle]
-        set compatible [append compatible " " "xlnx,axi-cdma-1.00.a"]
-        set_drv_prop $drv_handle compatible "$compatible" stringlist
+#        set compatible [append compatible " " "xlnx,axi-cdma-1.00.a"]
+#        set_drv_prop $drv_handle compatible "$compatible" stringlist
 	set dma_ip [get_cells -hier $drv_handle]
 	set cdma_count [hsi::utils::get_os_parameter_value "cdma_count"]
 	if { [llength $cdma_count] == 0 } {
@@ -71,7 +71,7 @@ proc add_dma_channel {drv_handle parent_node xdma addr mode devid} {
 	#set node_name [format "dma-channel@%x" $addr]
 	set dma_channel [add_or_get_dt_node -n "dma-channel" -u $addr -p $parent_node]
 
-	hsi::utils::add_new_dts_param $dma_channel "compatible" [format "xlnx,%s-channel" $xdma] stringlist
+#	hsi::utils::add_new_dts_param $dma_channel "compatible" [format "xlnx,%s-channel" $xdma] stringlist
 	hsi::utils::add_new_dts_param $dma_channel "xlnx,device-id" $devid hexint
 	add_cross_property_to_dtnode $drv_handle "CONFIG.C_INCLUDE_DRE" $dma_channel "xlnx,include-dre" boolean
 	add_cross_property_to_dtnode $drv_handle "CONFIG.C_M_AXI_DATA_WIDTH" $dma_channel "xlnx,datawidth"
