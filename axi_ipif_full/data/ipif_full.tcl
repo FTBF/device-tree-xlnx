@@ -32,4 +32,6 @@ proc generate {drv_handle} {
     set_drv_prop $drv_handle target_label "$targetLabel" stringlist
     set targetName [get_property CONFIG.TARGET_NAME $ip_cell]
     set_drv_prop $drv_handle target_name "$targetName" stringlist
+    set targetIntf [get_property CONFIG.TARGET_INTF $ip_cell]
+    set_drv_prop $drv_handle target_intf "$targetIntf" stringlist
 }

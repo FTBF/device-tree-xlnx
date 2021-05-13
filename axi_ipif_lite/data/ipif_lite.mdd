@@ -24,4 +24,5 @@ BEGIN driver ipif_lite
 #  DTGPARAM name = dtg.ip_params, type = boolean;
   DTGPARAM name = target_names, default = None, type = string;
   DTGPARAM name = target_labels, default = None, type = string;
+  DTGPARAM name = target_intfs, default = None, type = string;
 END driver

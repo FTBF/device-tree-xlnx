@@ -36,4 +36,6 @@ proc generate {drv_handle} {
     set_drv_prop $drv_handle target_labels "$targetLabelTrimmed" stringlist
     set targetName [get_property CONFIG.TARGET_NAMES $ip_cell]
     set_drv_prop $drv_handle target_names "$targetName" stringlist
+    set targetIntf [get_property CONFIG.TARGET_INTFS $ip_cell]
+    set_drv_prop $drv_handle target_intfs "$targetIntf" stringlist
 }

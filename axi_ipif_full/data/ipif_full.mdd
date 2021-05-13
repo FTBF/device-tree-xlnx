@@ -24,4 +24,5 @@ BEGIN driver ipif_full
 #  DTGPARAM name = dtg.ip_params, type = boolean;
   DTGPARAM name = target_name, default = None, type = string;
   DTGPARAM name = target_label, default = None, type = string;
+  DTGPARAM name = target_intf, default = None, type = string;
 END driver
