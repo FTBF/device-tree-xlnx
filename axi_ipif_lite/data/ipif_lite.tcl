@@ -38,4 +38,6 @@ proc generate {drv_handle} {
     set_drv_prop $drv_handle target_names "$targetName" stringlist
     set targetIntf [get_property CONFIG.TARGET_INTFS $ip_cell]
     set_drv_prop $drv_handle target_intfs "$targetIntf" stringlist
+
+    set_drv_prop $drv_handle n_target_regs [get_property CONFIG.N_REG $ip_cell] int
 }

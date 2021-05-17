@@ -25,4 +25,5 @@ BEGIN driver ipif_lite
   DTGPARAM name = target_names, default = None, type = string;
   DTGPARAM name = target_labels, default = None, type = string;
   DTGPARAM name = target_intfs, default = None, type = string;
+  DTGPARAM name = n_target_regs, default = 1, type = int;
 END driver
