@@ -40,4 +40,6 @@ proc generate {drv_handle} {
     set_drv_prop $drv_handle target_intfs "$targetIntf" stringlist
 
     set_drv_prop $drv_handle n_target_regs [get_property CONFIG.N_REG $ip_cell] int
+    set_drv_prop $drv_handle n_target      [get_property CONFIG.N_CHIP $ip_cell] int
+    set_drv_prop $drv_handle mux_by_chip   [get_property CONFIG.MUX_BY_CHIP $ip_cell] bool
 }
