@@ -655,7 +655,7 @@ proc set_drv_def_dts {drv_handle} {
 		}
                 hsi::utils::add_new_dts_param "${child_node}" "firmware-name" "$hw_name" string
                 hsi::utils::add_new_dts_param "${child_node}" "git-sha" [exec git rev-parse --short HEAD] string
-                hsi::utils::add_new_dts_param "${child_node}" "git-desc" [exec git describe --always --dirty] string
+                hsi::utils::add_new_dts_param "${child_node}" "git-desc" [exec git describe --always --dirty --long] string
 		set overlay_custom_dts [get_property CONFIG.overlay_custom_dts [get_os]]
 		if {[llength $overlay_custom_dts]} {
 			update_overlay_custom_dts_include $default_dts
