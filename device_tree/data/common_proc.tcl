@@ -2403,7 +2403,7 @@ proc gen_label {drv_handle} {
 	set slave [get_cells -hier ${drv_handle}]
 	set name [get_property NAME $slave]
 	regsub -all {_} $name {-} name
-	set_drv_prop_if_empty $drv_handle label $name stringlist
+	set_drv_prop_if_empty $drv_handle instance_id $name stringlist
 }
 
 proc gen_compatible_property {drv_handle} {
